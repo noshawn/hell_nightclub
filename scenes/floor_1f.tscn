@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://floor_1f"]
+
+[ext_resource type="PackedScene" uid="uid://bllke6nby7koo" path="res://scenes/tilemaps.tscn" id="1_tilemaps"]
+[ext_resource type="PackedScene" uid="uid://copmddbeoxptn" path="res://scenes/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/npc_twitchy_pete.tscn" id="3_pete"]
+[ext_resource type="PackedScene" path="res://scenes/npc_bouncer.tscn" id="4_bouncer"]
+[ext_resource type="Script" path="res://scripts/stairs.gd" id="5_stairs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stairs"]
+size = Vector2(16, 16)
+
+[node name="Floor1F" type="Node2D"]
+
+[node name="TileMaps" parent="." instance=ExtResource("1_tilemaps")]
+
+[node name="Player" parent="TileMaps" instance=ExtResource("2_player")]
+z_index = 1
+y_sort_enabled = true
+scale = Vector2(0.1, 0.1)
+
+[node name="TwitchyPete" parent="TileMaps" instance=ExtResource("3_pete")]
+position = Vector2(1, 0)
+
+[node name="Bouncer" parent="TileMaps" instance=ExtResource("4_bouncer")]
+position = Vector2(-32, 16)
+
+[node name="StairsToB1" type="Area2D" parent="TileMaps"]
+position = Vector2(48, -16)
+script = ExtResource("5_stairs")
+target_floor = "B1"
+spawn_point = "from_1F"
+requires_permission = true
+permission_npc = "bouncer"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMaps/StairsToB1"]
+shape = SubResource("RectangleShape2D_stairs")
+
+[node name="Label" type="Label" parent="TileMaps/StairsToB1"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 0.0
+theme_override_font_sizes/font_size = 10
+text = "↓B1"
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="TileMaps"]
+zoom = Vector2(5, 5)
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="default" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(0, 0)
+
+[node name="from_B1" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(48, 0)

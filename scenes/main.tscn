@@ -1,32 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://2wacm2cbuaxi"]
+[gd_scene load_steps=7 format=3 uid="uid://2wacm2cbuaxi"]
 
-[ext_resource type="Script" uid="uid://dbjtpsdn25py2" path="res://scripts/main.gd" id="1_3lgf1"]
-[ext_resource type="PackedScene" uid="uid://bllke6nby7koo" path="res://scenes/tilemaps.tscn" id="1_uvjg0"]
-[ext_resource type="PackedScene" uid="uid://copmddbeoxptn" path="res://scenes/player.tscn" id="3_506sy"]
-[ext_resource type="PackedScene" path="res://scenes/dialogue_manager.tscn" id="4_dialogue"]
-[ext_resource type="PackedScene" path="res://scenes/npc_twitchy_pete.tscn" id="5_npc"]
-[ext_resource type="PackedScene" path="res://scenes/lighter_minigame.tscn" id="6_lighter"]
-[ext_resource type="PackedScene" path="res://scenes/npc_bouncer.tscn" id="7_bouncer"]
+[ext_resource type="Script" uid="uid://dbjtpsdn25py2" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://c33bjqsrkuhb4" path="res://scripts/floor_manager.gd" id="2_floor_manager"]
+[ext_resource type="PackedScene" path="res://scenes/dialogue_manager.tscn" id="3_dialogue"]
+[ext_resource type="PackedScene" path="res://scenes/lighter_minigame.tscn" id="4_lighter"]
+[ext_resource type="PackedScene" path="res://scenes/floor_1f.tscn" id="5_floor1f"]
+[ext_resource type="PackedScene" path="res://scenes/floor_b1.tscn" id="6_floorb1"]
 
 [node name="main" type="Node2D"]
-script = ExtResource("1_3lgf1")
+script = ExtResource("1_main")
 
-[node name="TileMaps" parent="." instance=ExtResource("1_uvjg0")]
+[node name="FloorManager" type="Node" parent="."]
+script = ExtResource("2_floor_manager")
 
-[node name="Player" parent="TileMaps" instance=ExtResource("3_506sy")]
-z_index = 1
-y_sort_enabled = true
-scale = Vector2(0.1, 0.1)
+[node name="Floor1F" parent="." instance=ExtResource("5_floor1f")]
 
-[node name="TwitchyPete" parent="TileMaps" instance=ExtResource("5_npc")]
-position = Vector2(1, 0)
+[node name="FloorB1" parent="." instance=ExtResource("6_floorb1")]
+visible = false
 
-[node name="Bouncer" parent="TileMaps" instance=ExtResource("7_bouncer")]
-position = Vector2(-32, 16)
+[node name="DialogueManager" parent="." instance=ExtResource("3_dialogue")]
 
-[node name="Camera2D" type="Camera2D" parent="TileMaps"]
-zoom = Vector2(5, 5)
-
-[node name="DialogueManager" parent="." instance=ExtResource("4_dialogue")]
-
-[node name="LighterMinigame" parent="." instance=ExtResource("6_lighter")]
+[node name="LighterMinigame" parent="." instance=ExtResource("4_lighter")]

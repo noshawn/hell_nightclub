@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://stairs_scene"]
+
+[ext_resource type="Script" path="res://scripts/stairs.gd" id="1_stairs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stairs"]
+size = Vector2(16, 16)
+
+[node name="Stairs" type="Area2D"]
+script = ExtResource("1_stairs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.6, 0.4, 0.2, 1)
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_stairs")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -30.0
+offset_right = 20.0
+offset_bottom = -10.0
+theme_override_font_sizes/font_size = 12
+text = "↓B1"
+horizontal_alignment = 1

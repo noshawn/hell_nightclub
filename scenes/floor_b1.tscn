@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://floor_b1"]
+
+[ext_resource type="PackedScene" uid="uid://bllke6nby7koo" path="res://scenes/tilemaps.tscn" id="1_tilemaps"]
+[ext_resource type="Script" path="res://scripts/stairs.gd" id="2_stairs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stairs"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stairs2"]
+size = Vector2(16, 16)
+
+[node name="FloorB1" type="Node2D"]
+
+[node name="TileMaps" parent="." instance=ExtResource("1_tilemaps")]
+modulate = Color(0.7, 0.5, 0.5, 1)
+
+[node name="StairsTo1F" type="Area2D" parent="TileMaps"]
+position = Vector2(-48, -16)
+script = ExtResource("2_stairs")
+target_floor = "1F"
+spawn_point = "from_B1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMaps/StairsTo1F"]
+shape = SubResource("RectangleShape2D_stairs")
+
+[node name="Label" type="Label" parent="TileMaps/StairsTo1F"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 0.0
+theme_override_font_sizes/font_size = 10
+text = "↑1F"
+horizontal_alignment = 1
+
+[node name="StairsToB2" type="Area2D" parent="TileMaps"]
+position = Vector2(48, -16)
+script = ExtResource("2_stairs")
+target_floor = "B2"
+spawn_point = "from_B1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMaps/StairsToB2"]
+shape = SubResource("RectangleShape2D_stairs2")
+
+[node name="Label" type="Label" parent="TileMaps/StairsToB2"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 0.0
+theme_override_font_sizes/font_size = 10
+text = "↓B2"
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="TileMaps"]
+zoom = Vector2(5, 5)
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="default" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(0, 0)
+
+[node name="from_1F" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-48, 0)
+
+[node name="from_B2" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(48, 0)
