@@ -1,0 +1,76 @@
+{
+  "npc_id": "bouncer",
+  "npc_name": "Bouncer",
+  
+  "first_meeting": [
+    {"speaker": "Bouncer", "text": "請問你有使用電子煙嗎？"},
+    {
+      "speaker": "You",
+      "text": "",
+      "choices": [
+        {"text": "沒有", "next_dialogue_key": "no_vape"},
+        {"text": "有", "next_dialogue_key": "yes_vape"}
+      ]
+    }
+  ],
+  
+  "no_vape": [
+    {"speaker": "Bouncer", "text": "噢不。"},
+    {"speaker": "Bouncer", "text": "那更好了，我有紙菸。"},
+    {
+      "speaker": "You",
+      "text": "",
+      "choices": [
+        {"text": "[點菸]", "action": "light_cigarette"},
+        {"text": "等一下再說"}
+      ]
+    }
+  ],
+  
+  "yes_vape": [
+    {"speaker": "Bouncer", "text": "..."},
+    {"speaker": "Bouncer", "text": "電子煙不算。這裡是地獄夜總會，我們只抽真的。"},
+    {
+      "speaker": "You",
+      "text": "",
+      "choices": [
+        {"text": "[點菸]", "action": "light_cigarette"},
+        {"text": "好吧..."}
+      ]
+    }
+  ],
+  
+  "return_no_cigarette": [
+    {"speaker": "Bouncer", "text": "還在等那根菸..."},
+    {
+      "speaker": "You",
+      "text": "",
+      "choices": [
+        {"text": "[點菸]", "action": "light_cigarette"},
+        {"text": "再等等"}
+      ]
+    }
+  ],
+  
+  "after_cigarette": [
+    {"speaker": "Bouncer", "text": "*深深吸了一口*"},
+    {"speaker": "Bouncer", "text": "不錯。你可以下去B1了。"},
+    {"speaker": "Bouncer", "text": "小心點，下面的人比我還渴。"}
+  ],
+  
+  "after_cigarette_return": [
+    {"speaker": "Bouncer", "text": "*吐出煙圈*"},
+    {"speaker": "Bouncer", "text": "B1的樓梯在那邊。去吧。"}
+  ],
+  
+  "burned": [
+    {"speaker": "Bouncer", "text": "！！！"},
+    {"speaker": "Bouncer", "text": "*捂著臉* 你他媽的在幹嘛？！"},
+    {"speaker": "Bouncer", "text": "滾。B1你別想進去了。"}
+  ],
+  
+  "burned_return": [
+    {"speaker": "Bouncer", "text": "*怒視* 離我遠點。"},
+    {"speaker": "Bouncer", "text": "燒傷的臉不會忘記是誰幹的。"}
+  ]
+}

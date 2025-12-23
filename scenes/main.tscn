@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://2wacm2cbuaxi"]
+[gd_scene load_steps=8 format=3 uid="uid://2wacm2cbuaxi"]
 
 [ext_resource type="Script" uid="uid://dbjtpsdn25py2" path="res://scripts/main.gd" id="1_3lgf1"]
 [ext_resource type="PackedScene" uid="uid://bllke6nby7koo" path="res://scenes/tilemaps.tscn" id="1_uvjg0"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" path="res://scenes/dialogue_manager.tscn" id="4_dialogue"]
 [ext_resource type="PackedScene" path="res://scenes/npc_twitchy_pete.tscn" id="5_npc"]
 [ext_resource type="PackedScene" path="res://scenes/lighter_minigame.tscn" id="6_lighter"]
+[ext_resource type="PackedScene" path="res://scenes/npc_bouncer.tscn" id="7_bouncer"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_3lgf1")
@@ -18,7 +19,10 @@ y_sort_enabled = true
 scale = Vector2(0.1, 0.1)
 
 [node name="TwitchyPete" parent="TileMaps" instance=ExtResource("5_npc")]
-position = Vector2(32, 0)
+position = Vector2(1, 0)
+
+[node name="Bouncer" parent="TileMaps" instance=ExtResource("7_bouncer")]
+position = Vector2(-32, 16)
 
 [node name="Camera2D" type="Camera2D" parent="TileMaps"]
 zoom = Vector2(5, 5)
