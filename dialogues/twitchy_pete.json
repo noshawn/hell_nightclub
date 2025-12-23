@@ -1,0 +1,67 @@
+{
+  "npc_id": "twitchy_pete",
+  "npc_name": "Twitchy Pete",
+  
+  "first_meeting": [
+    {"speaker": "Twitchy Pete", "text": "*scratches neck frantically*"},
+    {"speaker": "Twitchy Pete", "text": "Hey... hey you. You got a light? A smoke? Anything?"},
+    {"speaker": "Twitchy Pete", "text": "Been down here three days. Or weeks. Time's weird in the basement levels."},
+    {
+      "speaker": "You",
+      "text": "",
+      "choices": [
+        {"text": "[Light cigarette]", "action": "light_cigarette"},
+        {"text": "Maybe later.", "next_dialogue_key": "refuse_cigarette"},
+        {"text": "What is this place?", "next_dialogue_key": "ask_about_place"}
+      ]
+    }
+  ],
+  
+  "return_no_cigarette": [
+    {"speaker": "Twitchy Pete", "text": "*twitches* Back again? Still need that smoke..."},
+    {
+      "speaker": "You",
+      "text": "",
+      "choices": [
+        {"text": "[Light cigarette]", "action": "light_cigarette"},
+        {"text": "Not yet."}
+      ]
+    }
+  ],
+  
+  "refuse_cigarette": [
+    {"speaker": "Twitchy Pete", "text": "Yeah... yeah, later. I'll be here. Always here."}
+  ],
+  
+  "ask_about_place": [
+    {"speaker": "Twitchy Pete", "text": "Hell Night Club, baby. 1F is the lobby. B1 is where things get... interesting."},
+    {"speaker": "Twitchy Pete", "text": "B2? *laughs nervously* Don't go to B2. Not yet."},
+    {"speaker": "Twitchy Pete", "text": "Now about that cigarette..."}
+  ],
+  
+  "after_cigarette": [
+    {"speaker": "Twitchy Pete", "text": "*takes a long drag* Ahhhhh... that's the stuff."},
+    {"speaker": "Twitchy Pete", "text": "You're alright, kid. Name's Pete. Twitchy Pete, they call me."},
+    {"speaker": "Twitchy Pete", "text": "Used to be a DJ upstairs before... well, before I found B2."},
+    {"speaker": "Twitchy Pete", "text": "Word of advice? The bouncer at the stairs likes menthols. Just saying."},
+    {"speaker": "Twitchy Pete", "text": "*exhales smoke rings shaped like skulls*"}
+  ],
+  
+  "after_cigarette_return": [
+    {"speaker": "Twitchy Pete", "text": "*puffs contentedly* Hey, it's my favorite delivery person."},
+    {"speaker": "Twitchy Pete", "text": "Need directions? B1 stairs are past the bar. Watch out for the bartender though."}
+  ],
+  
+  "burned": [
+    {"speaker": "Twitchy Pete", "text": "AAAAAHHHHH!!!"},
+    {"speaker": "Twitchy Pete", "text": "*clutches face* WHAT THE HELL, MAN?!"},
+    {"speaker": "Twitchy Pete", "text": "My... my beautiful face... I used to be a DJ, you know..."},
+    {"speaker": "Twitchy Pete", "text": "*whimpers* Just... just get away from me."}
+  ],
+  
+  "burned_return": [
+    {"speaker": "Twitchy Pete", "text": "*flinches away* YOU. Stay back!"},
+    {"speaker": "Twitchy Pete", "text": "I don't want anything from you. Ever."},
+    {"speaker": "Twitchy Pete", "text": "*touches scarred face* Some delivery person you are..."}
+  ]
+}
