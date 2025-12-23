@@ -16,7 +16,7 @@
   
   "no_vape": [
     {"speaker": "Bouncer", "text": "噢不。"},
-    {"speaker": "Bouncer", "text": "那更好了，我有紙菸。"},
+    {"speaker": "Bouncer", "text": "那更好了，我有紙菸，借個火吧。"},
     {
       "speaker": "You",
       "text": "",

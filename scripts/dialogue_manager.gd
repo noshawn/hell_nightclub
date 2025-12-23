@@ -28,14 +28,27 @@ func _ready() -> void:
 	panel.gui_input.connect(_on_panel_gui_input)
 
 func _on_panel_gui_input(event: InputEvent) -> void:
+	_handle_input(event)
+
+func _unhandled_input(event: InputEvent) -> void:
+	_handle_input(event)
+
+func _handle_input(event: InputEvent) -> void:
 	if not is_active:
 		return
+	
+	var should_advance = false
+	
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		should_advance = true
+	elif event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:
+		should_advance = true
+	
+	if should_advance:
 		if choices_container.get_child_count() > 0:
 			return
 		
 		if is_typing:
-			# Skip to full text
 			skip_typewriter()
 		else:
 			advance_dialogue()
