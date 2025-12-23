@@ -1,0 +1,52 @@
+{
+  "npc_id": "yuppie_hank",
+  "npc_name": "Yuppie Hank",
+  
+  "first_meeting": [
+    {"speaker": "Yuppie Hank", "text": "我們總是在後殖民時期的傷痛中緩慢前行，但沒有人想到，最重要的東西不過就是我們的脊椎。"},
+    {"speaker": "Yuppie Hank", "text": "是的，我的特休假期會去砍伐雨林開發而成的東南亞度假樂園享受廉價的勞力、妓女與產地直送的冰毒。"},
+    {
+      "speaker": "You",
+      "text": "",
+      "choices": [
+        {"text": "[點菸]", "action": "light_cigarette"},
+        {"text": "聽起來很棒"}
+      ]
+    }
+  ],
+  
+  "return_no_cigarette": [
+    {"speaker": "Yuppie Hank", "text": "你知道嗎，全球化的本質就是不平等的再分配"},
+    {
+      "speaker": "You",
+      "text": "",
+      "choices": [
+        {"text": "[點菸]", "action": "light_cigarette"},
+        {"text": "改天再聊"}
+      ]
+    }
+  ],
+  
+  "after_cigarette": [
+    {"speaker": "Yuppie Hank", "text": "*優雅地點燃香菸*"},
+    {"speaker": "Yuppie Hank", "text": "這是古巴的菸草嗎？諷刺的是，我支持禁運"},
+    {"speaker": "Yuppie Hank", "text": "但個人享樂與政治立場是可以分開的，你懂的"}
+  ],
+  
+  "after_cigarette_return": [
+    {"speaker": "Yuppie Hank", "text": "*看著手錶* 我的私人飛機還有三小時"},
+    {"speaker": "Yuppie Hank", "text": "碳足跡？我有買碳權抵銷，所以沒問題"},
+    {"speaker": "Yuppie Hank", "text": "還有那些西非的加工出口區都被我找的遊說團體搞掉了，環保，讚啦！"}
+  ],
+  
+  "burned": [
+    {"speaker": "Yuppie Hank", "text": "我的臉！！！"},
+    {"speaker": "Yuppie Hank", "text": "你知道這張臉值多少錢嗎？！"},
+    {"speaker": "Yuppie Hank", "text": "我的律師會聯繫你的"}
+  ],
+  
+  "burned_return": [
+    {"speaker": "Yuppie Hank", "text": "*戴著墨鏡遮住傷疤*"},
+    {"speaker": "Yuppie Hank", "text": "訴訟還在進行中。別跟我說話。"}
+  ]
+}

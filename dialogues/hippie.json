@@ -1,0 +1,54 @@
+{
+  "npc_id": "hippie",
+  "npc_name": "Hippie",
+  
+  "first_meeting": [
+    {"speaker": "Hippie", "text": "呃他是不是又在說我的壞話了"},
+    {"speaker": "Hippie", "text": "他的內心住了一個惡魔 真是個小惡魔"},
+    {"speaker": "Hippie", "text": "請不要玷污我創作的神聖性"},
+    {"speaker": "Hippie", "text": "我寫了一篇小詩給妳"},
+    {"speaker": "Hippie", "text": "我那天打電話給我媽媽，結果他去當兵了。神明也有服兵役的義務。"},
+    {
+      "speaker": "You",
+      "text": "",
+      "choices": [
+        {"text": "[點菸]", "action": "light_cigarette"},
+        {"text": "...好"}
+      ]
+    }
+  ],
+  
+  "return_no_cigarette": [
+    {"speaker": "Hippie", "text": "神明也有服兵役的義務..."},
+    {
+      "speaker": "You",
+      "text": "",
+      "choices": [
+        {"text": "[點菸]", "action": "light_cigarette"},
+        {"text": "我先走了"}
+      ]
+    }
+  ],
+  
+  "after_cigarette": [
+    {"speaker": "Hippie", "text": "*深深吸了一口，眼神迷離*"},
+    {"speaker": "Hippie", "text": "你懂的...創作需要靈感..."},
+    {"speaker": "Hippie", "text": "這根菸就是我的繆斯女神"}
+  ],
+  
+  "after_cigarette_return": [
+    {"speaker": "Hippie", "text": "*吐出一個完美的煙圈*"},
+    {"speaker": "Hippie", "text": "我正在構思下一首詩...關於煙霧與虛無"}
+  ],
+  
+  "burned": [
+    {"speaker": "Hippie", "text": "啊啊啊！！！"},
+    {"speaker": "Hippie", "text": "我的臉！我的創作之臉！"},
+    {"speaker": "Hippie", "text": "這是對藝術的褻瀆..."}
+  ],
+  
+  "burned_return": [
+    {"speaker": "Hippie", "text": "*用圍巾遮住燒傷的臉*"},
+    {"speaker": "Hippie", "text": "痛苦也是一種創作素材...但我不想要這種"}
+  ]
+}

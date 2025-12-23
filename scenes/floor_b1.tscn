@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://floor_b1"]
+[gd_scene load_steps=7 format=3 uid="uid://floor_b1"]
 
 [ext_resource type="PackedScene" uid="uid://bllke6nby7koo" path="res://scenes/tilemaps.tscn" id="1_tilemaps"]
 [ext_resource type="Script" path="res://scripts/stairs.gd" id="2_stairs"]
+[ext_resource type="PackedScene" path="res://scenes/npc_hippie.tscn" id="3_hippie"]
+[ext_resource type="PackedScene" path="res://scenes/npc_yuppie_hank.tscn" id="4_yuppie"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stairs"]
 size = Vector2(16, 16)
@@ -13,6 +15,12 @@ size = Vector2(16, 16)
 
 [node name="TileMaps" parent="." instance=ExtResource("1_tilemaps")]
 modulate = Color(0.7, 0.5, 0.5, 1)
+
+[node name="Hippie" parent="TileMaps" instance=ExtResource("3_hippie")]
+position = Vector2(-16, 8)
+
+[node name="YuppieHank" parent="TileMaps" instance=ExtResource("4_yuppie")]
+position = Vector2(16, 8)
 
 [node name="StairsTo1F" type="Area2D" parent="TileMaps"]
 position = Vector2(-48, -16)
